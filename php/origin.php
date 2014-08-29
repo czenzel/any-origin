@@ -14,7 +14,7 @@ support - at - teamweather.com
 License:
 This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
 
-Last Updated:	2014-06-29
+Last Updated:	2014-08-29
  **/
 
 /* Do not modify this line because of request limits set for Azure. */
@@ -30,10 +30,10 @@ $incoming_headers = parseRequestHeaders();
 $incoming_type = "";
 $ao_user_origin = "";
 
-if ($incoming_headers["origin"]) {
+if (isset($incoming_headers["origin"])) {
 	$ao_user_origin = $incoming_headers["origin"];
 	$incoming_type = "origin";
-} else if ($incoming_headers["x-requested-with"]) {
+} else if (isset($incoming_headers["x-requested-with"])) {
 	$ao_user_origin = $incoming_headers["x-requested-with"];
 	$incoming_type = "x-requested-with";
 } else {
